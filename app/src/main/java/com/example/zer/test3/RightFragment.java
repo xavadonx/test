@@ -24,4 +24,8 @@ public class RightFragment extends Fragment {
         label.setText(getString(R.string.action));
         return root;
     }
+
+    public void setText(String str) {
+        label.setText(str);
+    }
 }

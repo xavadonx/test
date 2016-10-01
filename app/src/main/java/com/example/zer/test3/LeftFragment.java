@@ -21,6 +21,12 @@ public class LeftFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_left, container, false);
         action = (Button) root.findViewById(R.id.fl_action);
         action.setText(getString(R.string.action));
+        action.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).setTextToRightFragment("text");
+            }
+        });
         return root;
     }
 }
