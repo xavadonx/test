@@ -6,6 +6,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     private RightFragment rightFragment;
+    private LeftFragment leftFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         rightFragment = RightFragment.newInstance();
+
+        leftFragment.setSender(rightFragment);
 
         getSupportFragmentManager()
                 .beginTransaction()

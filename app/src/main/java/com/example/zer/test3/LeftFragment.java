@@ -10,6 +10,7 @@ import android.widget.Button;
 public class LeftFragment extends Fragment {
 
     private Button action;
+    private ISender sender;
 
     public static LeftFragment newInstance() {
         return new LeftFragment();
@@ -24,9 +25,16 @@ public class LeftFragment extends Fragment {
         action.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).setTextToRightFragment("text");
+                if (sender != null) {
+                    sender.sendText("text");
+                }
             }
         });
         return root;
     }
+
+    public void setSender(ISender sender) {
+        this.sender = sender;
+    }
+
 }

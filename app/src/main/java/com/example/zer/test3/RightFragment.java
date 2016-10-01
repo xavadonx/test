@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class RightFragment extends Fragment {
+public class RightFragment extends Fragment implements ISender {
 
     private TextView label;
 
@@ -24,7 +24,8 @@ public class RightFragment extends Fragment {
         return root;
     }
 
-    public void setText(String str) {
+    @Override
+    public void sendText(String str) {
         label.setText(str);
     }
 }
