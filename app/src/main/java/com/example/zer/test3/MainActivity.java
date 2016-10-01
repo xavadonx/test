@@ -20,8 +20,4 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.fragment_right, RightFragment.newInstance(), RightFragment.class.getSimpleName())
                 .commit();
     }
-
-    public void setTextToRightFragment(String str) {
-        rightFragment.setText(str);
-    }
 }

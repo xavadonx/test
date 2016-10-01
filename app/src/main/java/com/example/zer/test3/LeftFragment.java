@@ -24,7 +24,10 @@ public class LeftFragment extends Fragment {
         action.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).setTextToRightFragment("text");
+                Fragment fragment = getActivity().getSupportFragmentManager()
+                        .findFragmentByTag(LeftFragment.class.getSimpleName());
+                RightFragment rightFragment = (RightFragment) fragment;
+                rightFragment.setText("text");
             }
         });
         return root;
